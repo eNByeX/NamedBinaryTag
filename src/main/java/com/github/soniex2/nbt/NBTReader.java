@@ -1,9 +1,11 @@
 package com.github.soniex2.nbt;
 
 import com.github.soniex2.nbt.tag.ITag;
+import com.github.soniex2.nbt.tag.TagCompound;
 import com.github.soniex2.nbt.tag.handler.ITagsetHandler;
 
 import java.io.DataInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -12,6 +14,7 @@ import java.util.List;
  */
 public class NBTReader extends DataInputStream {
     private NBTTagInfo tagInfo;
+    private String rootTagName = null;
 
     public NBTReader(InputStream in, NBTTagInfo tagInfo) {
         super(in);
@@ -22,10 +25,24 @@ public class NBTReader extends DataInputStream {
         this.tagInfo = tagInfo;
     }
 
-    public ITag readTag() {
+    public ITag readTag() throws IOException {
         List<ITagsetHandler> tagsetHandlers = tagInfo.getTagsetHandlers();
-        // todo
-        return null;
+        byte type = readByte();
+        Class<? extends ITag> tagType = tagInfo.getTag(type);
+        if (!TagCompound.class.equals(tagType)) {
+            throw new IOException();
+        }
+        for (ITagsetHandler tagsetHandler : tagsetHandlers) {
+            if (tagsetHandler.canRead(tagType)) {
+                rootTagName = tagsetHandler.readName(tagType, this);
+                return tagsetHandler.readPayload(tagType, rootTagName, this);
+            }
+        }
+        throw new IOException();
+    }
+
+    public String getRootTagName() {
+        return rootTagName;
     }
 
     public NBTTagInfo getTagInfo() {
