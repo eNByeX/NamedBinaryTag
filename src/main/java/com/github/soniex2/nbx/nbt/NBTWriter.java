@@ -1,6 +1,6 @@
-package com.github.soniex2.nbt;
+package com.github.soniex2.nbx.nbt;
 
-import com.github.soniex2.nbt.tag.ITag;
+import com.github.soniex2.nbx.nbt.tag.ITag;
 
 import java.io.DataOutputStream;
 import java.io.IOException;

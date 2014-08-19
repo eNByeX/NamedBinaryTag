@@ -1,9 +1,9 @@
-package com.github.soniex2.nbt.tag;
+package com.github.soniex2.nbx.nbt.tag;
 
-import com.github.soniex2.nbt.NBTReader;
-import com.github.soniex2.nbt.NBTTagInfo;
-import com.github.soniex2.nbt.NBTWriter;
-import com.github.soniex2.nbt.tag.handler.ITagsetHandler;
+import com.github.soniex2.nbx.nbt.NBTReader;
+import com.github.soniex2.nbx.nbt.NBTTagInfo;
+import com.github.soniex2.nbx.nbt.NBTWriter;
+import com.github.soniex2.nbx.nbt.tag.handler.ITagsetHandler;
 
 import java.io.IOException;
 import java.util.ArrayList;

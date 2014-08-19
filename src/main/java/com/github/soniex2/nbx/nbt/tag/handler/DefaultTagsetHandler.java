@@ -1,7 +1,7 @@
-package com.github.soniex2.nbt.tag.handler;
+package com.github.soniex2.nbx.nbt.tag.handler;
 
-import com.github.soniex2.nbt.NBTReader;
-import com.github.soniex2.nbt.tag.*;
+import com.github.soniex2.nbx.nbt.NBTReader;
+import com.github.soniex2.nbx.nbt.tag.*;
 
 import java.io.IOException;
 import java.util.HashMap;

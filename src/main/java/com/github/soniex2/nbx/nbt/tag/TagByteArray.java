@@ -1,7 +1,7 @@
-package com.github.soniex2.nbt.tag;
+package com.github.soniex2.nbx.nbt.tag;
 
-import com.github.soniex2.nbt.NBTReader;
-import com.github.soniex2.nbt.NBTWriter;
+import com.github.soniex2.nbx.nbt.NBTReader;
+import com.github.soniex2.nbx.nbt.NBTWriter;
 
 import java.io.IOException;
 

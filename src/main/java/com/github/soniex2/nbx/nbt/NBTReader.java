@@ -1,8 +1,8 @@
-package com.github.soniex2.nbt;
+package com.github.soniex2.nbx.nbt;
 
-import com.github.soniex2.nbt.tag.ITag;
-import com.github.soniex2.nbt.tag.TagCompound;
-import com.github.soniex2.nbt.tag.handler.ITagsetHandler;
+import com.github.soniex2.nbx.nbt.tag.ITag;
+import com.github.soniex2.nbx.nbt.tag.TagCompound;
+import com.github.soniex2.nbx.nbt.tag.handler.ITagsetHandler;
 
 import java.io.DataInputStream;
 import java.io.IOException;
